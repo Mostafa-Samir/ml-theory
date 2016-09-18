@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" href="css/style.css" charset="utf-8">
+        <link rel="stylesheet" href="dist/main.css" charset="utf-8">
     </head>
     <body>
         <div id="container">
@@ -27,23 +27,23 @@
                     <span id="line-intercept-display"></span>
                 </p>
 
-                <p align='center'><button id="auto-vis" data-state="paused">Automatic</button></p>
+                <p align='center'>
+                    <button id="auto-vis" data-state="paused">Automatic</button>
+                </p>
 
-                <p>
-                    <span style="width:auto;">|H| = </span>
-                    <span style="width:auto;" id="hypotheses-count"></span>
-                </p>
-                <p>
-                    <span style="width:auto;">|H|<sub>unique</sub> = </span>
-                    <span style="width:auto;" id="unique-hypotheses-count"></span>
-                    (<span style="width:auto;" id="unique-percentage"></span>%)
-                </p>
+                <section id="reports">
+                    <p>
+                        <span>|H| = </span>
+                        <span id="hypotheses-count"></span>
+                    </p>
+                    <p>
+                        <span>|H|<sub>unique</sub> = </span>
+                        <span id="unique-hypotheses-count"></span>
+                        (<span id="unique-percentage"></span>%)
+                    </p>
+                </section>
             </div>
         </div>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.0/seedrandom.min.js"></script>
-        <script src="js/datasets.js"></script>
-        <script src="js/visualization.js"></script>
-        <script src="js/control.js"></script>
+        <script src="dist/main.js"></script>
     </body>
 </html>
