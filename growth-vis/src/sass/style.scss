@@ -1,24 +1,28 @@
-#chart-area {
-    width: 50%;
-    float: left;
-    margin-right: 20px;
-}
+#growth-vis-container {
 
-#control-panel {
-    align-self: center;
-
-    input[type='range'] {
-        vertical-align: middle;
+    #chart-area {
+        width: 50%;
+        float: left;
+        margin-right: 20px;
     }
 
-    span {
-        display: inline-block;
-        width: 30px;
-    }
+    #control-panel {
+        align-self: center;
 
-    #reports {
+        input[type='range'] {
+            vertical-align: middle;
+        }
+
         span {
-            width:auto;
+            display: inline-block;
+            width: 30px;
+        }
+
+        #reports {
+            span {
+                width:auto;
+            }
         }
     }
+
 }

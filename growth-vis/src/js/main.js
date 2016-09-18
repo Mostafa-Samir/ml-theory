@@ -8,7 +8,7 @@ utility.onDOMReady(() => {
 
     controllers.inputChangeHandler();
 
-    document.querySelector("#container").style.display = "flex";
+    document.querySelector("#growth-vis-container").style.display = "flex";
 
     document.querySelectorAll("input[type='range']")
     .forEach(e => e.id !== "datset-size" ? e.addEventListener('input', controllers.inputChangeHandler) : null);
