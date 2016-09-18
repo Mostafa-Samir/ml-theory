@@ -1,5 +1,7 @@
 'use strict';
 
+import 'seedrandom';
+
 let datasets = {
     generatedDataset: null
 };
@@ -34,3 +36,5 @@ datasets.generate = function(size) {
 datasets.get = function(size) {
     return this.generatedDataset || this.generate(size);
 };
+
+export { datasets };

@@ -1,5 +1,8 @@
 'use strict';
 
+import { datasets } from './datasets';
+import { Visualization } from './visualization';
+
 function onReady(handler) {
     if (document.readyState !== "loading") {
         handler();
@@ -112,7 +115,7 @@ function universalHandler(stopRendering) {
         y: [intercept - slope, intercept + slope]
     }
 
-    if(!stopRendering) {
+    if(stopRendering !== true) {
         let vis = new Visualization();
 
         vis.addBluePoints(bluePoints);
@@ -128,7 +131,19 @@ function universalHandler(stopRendering) {
 onReady(() => {
     universalHandler();
     document.querySelector("#container").style.display = "flex";
-    document.querySelectorAll("input[type='range']").forEach(element => element.addEventListener('input', universalHandler));
+    document.querySelectorAll("input[type='range']")
+    .forEach(element => element.id !== "datset-size" ? element.addEventListener('input', universalHandler) : null);
+
+    document.querySelector("#datset-size").addEventListener('input', (e) => {
+        let size = e.target.value;
+        datasets.generate(size);
+
+        slidingInfo.hypotheses = {};
+        slidingInfo.dichotmies = {};
+
+        universalHandler();
+    });
+
     document.querySelector("#auto-vis").addEventListener("click", (e) => {
         let state = e.target.dataset.state;
         if(state === "paused") {

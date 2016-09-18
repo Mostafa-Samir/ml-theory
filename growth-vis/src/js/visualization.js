@@ -1,5 +1,7 @@
 'use strict';
 
+import * as Plotly from 'plotly.js';
+
 function Visualization() {
     this.plots = [];
 }
@@ -49,3 +51,5 @@ Visualization.prototype.render = function () {
         staticPlot: true
     });
 };
+
+export { Visualization };
