@@ -1,0 +1,24 @@
+#chart-area {
+    width: 50%;
+    float: left;
+    margin-right: 20px;
+}
+
+#control-panel {
+    align-self: center;
+
+    input[type='range'] {
+        vertical-align: middle;
+    }
+
+    span {
+        display: inline-block;
+        width: 30px;
+    }
+
+    #reports {
+        span {
+            width:auto;
+        }
+    }
+}
