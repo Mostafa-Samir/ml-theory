@@ -22,5 +22,9 @@
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+      "build": "gulp build",
+      "watch": "gulp watch"
   }
 }
