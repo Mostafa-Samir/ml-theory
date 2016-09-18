@@ -29,7 +29,7 @@ gulp.task('transpile', ['preprocess-sass'], () => {
 
 
 gulp.task('bundle', ['transpile'], () => {
-    return browserify("./temp/control.js")
+    return browserify("./temp/main.js")
         .bundle()
         .pipe(source('main.js'))
         .pipe(gulp.dest("./temp"))
@@ -44,3 +44,7 @@ gulp.task('minify', ['bundle'], () => {
 gulp.task('clean-temp', ['minify'], () => del('./temp/'));
 
 gulp.task('build', ['clean-temp']);
+
+gulp.task('watch', () => {
+    gulp.watch("./src/**/*.*", ['build']);
+});
