@@ -85,8 +85,9 @@ function inputChangeHandler(noRender) {
 
 /**
  * runs an automatic scan over the defined hypothesis space to count unique dichotmies
+ * @param {function} callback: a function to be called when scan is complete
 */
-function autoScan() {
+function autoScan(callback) {
     let slope = {min: -6, max: 6, step:0.1};
     let intercept = {min: -6, max:6, step:0.1};
 
@@ -116,6 +117,9 @@ function autoScan() {
 
         if(!terminate) {
             setTimeout(iterator.bind(this, newSlope, newIntercept), 5);
+        }
+        else if(!userStopped) {
+            callback();
         }
     }
 
