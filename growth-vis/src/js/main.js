@@ -4,6 +4,10 @@ import { datasets } from './datasets';
 import * as utility from './utility';
 import * as controllers from './controllers';
 
+window.addEventListener('resize', () => {
+    controllers.inputChangeHandler();
+});
+
 utility.onDOMReady(() => {
 
     controllers.inputChangeHandler();
@@ -30,7 +34,13 @@ utility.onDOMReady(() => {
             document.querySelectorAll("input")
             .forEach(element => element.disabled = true);
 
-            controllers.autoScan();
+            controllers.autoScan(() => {
+                e.target.dataset.state = "paused";
+                e.target.innerHTML = "Scan";
+
+                document.querySelectorAll("input")
+                .forEach(element => element.disabled = false);
+            });
         }
         else {
             e.target.dataset.state = "paused";
